@@ -1,0 +1,357 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg" >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="升腾离线安全支付"
+        android:textColor="@android:color/black"
+        android:textSize="80sp" />
+
+    <GridLayout
+        android:id="@+id/fristBlock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="50dp"
+        android:columnCount="1"
+        android:rowCount="3"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp" >
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="Core ID："
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/coreID"
+                android:layout_width="500dp"
+                android:layout_height="45dp"
+                android:background="@drawable/nmnx_edit_selector"
+                android:focusable="false"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp" >
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="Core SN："
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/coreSN"
+                android:layout_width="500dp"
+                android:layout_height="45dp"
+                android:background="@drawable/nmnx_edit_selector"
+                android:focusable="false"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp" >
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="Core Ver："
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/coreVer"
+                android:layout_width="500dp"
+                android:layout_height="45dp"
+                android:background="@drawable/nmnx_edit_selector"
+                android:focusable="false"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+        </LinearLayout>
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="450dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/qrcode_background"
+            android:padding="15dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="交易二维码："
+                android:textColor="#ff000000"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="金额(¥)："
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp" />
+
+                    <EditText
+                        android:id="@+id/amount"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/nmnx_edit_selector"
+                        android:digits="0123456789."
+                        android:inputType="number"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:text="0.01"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp" />
+
+                    <Button
+                        android:id="@+id/makeQR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="10dp"
+                        android:text="生成二维码"
+                        android:textSize="25sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone" >
+
+                    <Button
+                        android:id="@+id/powerOn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:padding="10dp"
+                        android:text="上电"
+                        android:textSize="25sp"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/oneType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:padding="10dp"
+                        android:text="获取ID"
+                        android:textSize="25sp" />
+
+                    <Button
+                        android:id="@+id/twoType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:padding="10dp"
+                        android:text="获取SN"
+                        android:textSize="25sp" />
+
+                    <Button
+                        android:id="@+id/threeType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="获取Ver"
+                        android:textSize="25sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:columnCount="3"
+            android:rowCount="5" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="3"
+                android:layout_gravity="fill"
+                android:orientation="horizontal"
+                android:padding="15dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="确认码："
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp" />
+
+                <EditText
+                    android:id="@+id/okCodeEdit"
+                    android:layout_width="300dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/nmnx_edit_selector"
+                    android:focusable="false"
+                    android:hint="请输入支付成功确认码"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/one"
+                android:layout_width="150dp"
+                android:layout_margin="10dp"
+                android:padding="12dp"
+                android:text="1"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/two"
+                android:layout_width="150dp"
+                android:layout_margin="10dp"
+                android:padding="12dp"
+                android:text="2"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/three"
+                android:layout_width="150dp"
+                android:layout_margin="10dp"
+                android:padding="12dp"
+                android:text="3"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/four"
+                android:layout_width="150dp"
+                android:layout_margin="10dp"
+                android:padding="12dp"
+                android:text="4"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/five"
+                android:layout_width="150dp"
+                android:layout_margin="10dp"
+                android:padding="12dp"
+                android:text="5"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/six"
+                android:layout_width="150dp"
+                android:layout_margin="10dp"
+                android:padding="12dp"
+                android:text="6"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/seven"
+                android:layout_width="150dp"
+                android:layout_margin="10dp"
+                android:padding="12dp"
+                android:text="7"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/eight"
+                android:layout_width="150dp"
+                android:layout_margin="10dp"
+                android:padding="12dp"
+                android:text="8"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/nine"
+                android:layout_width="150dp"
+                android:layout_margin="10dp"
+                android:padding="12dp"
+                android:text="9"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/zero"
+                android:layout_width="150dp"
+                android:layout_margin="10dp"
+                android:padding="12dp"
+                android:text="0"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/clean"
+                android:layout_width="150dp"
+                android:layout_margin="10dp"
+                android:padding="12dp"
+                android:text="清空"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/ok"
+                android:layout_width="150dp"
+                android:layout_margin="10dp"
+                android:padding="12dp"
+                android:text="确认"
+                android:textSize="25sp" />
+        </GridLayout>
+    </LinearLayout>
+
+</RelativeLayout>
